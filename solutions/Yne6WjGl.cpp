@@ -91,7 +91,7 @@ SOPHUC TinhThuong2SoPhuc(SOPHUC a, SOPHUC b)
     return c;
 }    
 
-SOPHUC TinhLuyThuaBacN(SOPHUC a, int n)
+/*SOPHUC TinhLuyThuaBacN(SOPHUC a, int n)
 {
     while(n != 0)
     {
@@ -99,6 +99,18 @@ SOPHUC TinhLuyThuaBacN(SOPHUC a, int n)
         n--;
     }
     return a;
+}*/
+SOPHUC TinhLuyThuaBacN(SOPHUC a, int n)
+{
+  if(n==0)
+  {a.PhanThuc=1;
+   a.PhanAo=0;
+   return a;
+  }
+  if(n==1)
+    return a;
+  else
+  return TinhTich2SoPhuc(TinhLuyThuaBacN(a,n-1),a);
 }
 int main()
 {
